@@ -14,9 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Navbar Scroll Effect
   initNavbarScroll();
-  
-  // Hero Carousel
-  initHeroCarousel();
 });
 
 // ============================================
@@ -194,74 +191,42 @@ function openWhatsApp(message) {
 }
 
 // ============================================
-// Hero Carousel
+// Ideabaaz Slideshow (Auto-rotate every 5s)
 // ============================================
 
-function initHeroCarousel() {
-  const carousel = document.getElementById('heroCarousel');
-  if (!carousel) return;
-  
-  const items = carousel.querySelectorAll('.hero-carousel-item');
-  const indicators = carousel.querySelectorAll('.hero-carousel-indicator');
-  let currentIndex = 0;
-  
-  // Function to show specific image
-  function showImage(index) {
-    // Remove active class from all items and indicators
-    items.forEach(item => item.classList.remove('active'));
-    indicators.forEach(indicator => indicator.classList.remove('active'));
-    
-    // Add active class to current item and indicator
-    if (items[index]) {
-      items[index].classList.add('active');
-    }
-    if (indicators[index]) {
-      indicators[index].classList.add('active');
-    }
-    
-    currentIndex = index;
-  }
-  
-  // Auto-rotate every 5 seconds
-  let carouselInterval = setInterval(function() {
-    currentIndex = (currentIndex + 1) % items.length;
-    showImage(currentIndex);
+let currentSlide = 0;
+let slideInterval;
+
+function initSlideshow() {
+  const slides = document.querySelectorAll('#ideabaazSlideshow .slide');
+  if (slides.length === 0) return;
+
+  slideInterval = setInterval(function() {
+    goToSlide((currentSlide + 1) % slides.length);
   }, 5000);
-  
-  // Click on indicator to jump to specific image
-  indicators.forEach(function(indicator, index) {
-    indicator.addEventListener('click', function(e) {
-      e.stopPropagation();
-      showImage(index);
-      // Reset interval
-      clearInterval(carouselInterval);
-      carouselInterval = setInterval(function() {
-        currentIndex = (currentIndex + 1) % items.length;
-        showImage(currentIndex);
-      }, 5000);
-    });
-  });
-  
-  // Click on carousel to open product link
-  carousel.addEventListener('click', function() {
-    const activeItem = carousel.querySelector('.hero-carousel-item.active');
-    if (activeItem) {
-      const productLink = activeItem.getAttribute('data-product-link');
-      if (productLink) {
-        window.open(productLink, '_blank', 'noopener,noreferrer');
-      }
-    }
-  });
-  
-  // Pause on hover (optional)
-  carousel.addEventListener('mouseenter', function() {
-    clearInterval(carouselInterval);
-  });
-  
-  carousel.addEventListener('mouseleave', function() {
-    carouselInterval = setInterval(function() {
-      currentIndex = (currentIndex + 1) % items.length;
-      showImage(currentIndex);
-    }, 5000);
-  });
 }
+
+function goToSlide(index) {
+  const slides = document.querySelectorAll('#ideabaazSlideshow .slide');
+  const dots = document.querySelectorAll('#slideshowDots .dot');
+  if (slides.length === 0) return;
+
+  slides[currentSlide].classList.remove('active');
+  if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
+
+  currentSlide = index;
+
+  slides[currentSlide].classList.add('active');
+  if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+
+  // Reset interval
+  clearInterval(slideInterval);
+  slideInterval = setInterval(function() {
+    goToSlide((currentSlide + 1) % slides.length);
+  }, 5000);
+}
+
+// Init slideshow on load
+document.addEventListener('DOMContentLoaded', function() {
+  initSlideshow();
+});
