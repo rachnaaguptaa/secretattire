@@ -1766,3 +1766,154 @@ ul {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ============================================
+   Ideabaaz Slideshow
+   ============================================ */
+
+.slideshow-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.slide {
+  display: none;
+  animation: fadeIn 0.6s ease;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide-caption {
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: var(--rose-deep);
+  transform: scale(1.2);
+}
+
+.dot:hover {
+  background: var(--primary);
+}
+
+/* ============================================
+   Institution Badges
+   ============================================ */
+
+.institution-badge {
+  padding: 0.75rem 1.5rem;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--foreground);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s ease;
+}
+
+.institution-badge:hover {
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+  border-color: var(--primary);
+}
+
+/* ============================================
+   News Grid
+   ============================================ */
+
+.news-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .news-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.news-card:hover {
+  transform: translateY(-6px);
+}
+
+.news-source {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.news-source-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.news-source span {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.news-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.news-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.news-link {
+  color: var(--rose-deep);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.news-card:hover .news-link {
+  color: var(--gold);
+}
+
+/* LinkedIn button hover */
+.btn-linkedin:hover {
+  background: #004182 !important;
+  transform: scale(1.05);
+  box-shadow: var(--shadow-elevated);
+}
