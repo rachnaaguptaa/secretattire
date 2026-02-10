@@ -189,3 +189,44 @@ function openWhatsApp(message) {
   const encodedMessage = encodeURIComponent(message || 'Hi, I am interested in Secret Attire!');
   window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');
 }
+
+// ============================================
+// Ideabaaz Slideshow (Auto-rotate every 5s)
+// ============================================
+
+let currentSlide = 0;
+let slideInterval;
+
+function initSlideshow() {
+  const slides = document.querySelectorAll('#ideabaazSlideshow .slide');
+  if (slides.length === 0) return;
+
+  slideInterval = setInterval(function() {
+    goToSlide((currentSlide + 1) % slides.length);
+  }, 5000);
+}
+
+function goToSlide(index) {
+  const slides = document.querySelectorAll('#ideabaazSlideshow .slide');
+  const dots = document.querySelectorAll('#slideshowDots .dot');
+  if (slides.length === 0) return;
+
+  slides[currentSlide].classList.remove('active');
+  if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
+
+  currentSlide = index;
+
+  slides[currentSlide].classList.add('active');
+  if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+
+  // Reset interval
+  clearInterval(slideInterval);
+  slideInterval = setInterval(function() {
+    goToSlide((currentSlide + 1) % slides.length);
+  }, 5000);
+}
+
+// Init slideshow on load
+document.addEventListener('DOMContentLoaded', function() {
+  initSlideshow();
+});
