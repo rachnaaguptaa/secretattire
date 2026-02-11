@@ -21,14 +21,18 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.instagram.com/secretattir"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center hover:bg-gold transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/secretattir"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center hover:bg-gold transition-colors"
                 aria-label="Facebook"
               >
@@ -36,6 +40,8 @@ const Footer = () => {
               </a>
               <a
                 href="https://wa.me/919034828632"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-cream/10 flex items-center justify-center hover:bg-gold transition-colors"
                 aria-label="WhatsApp"
               >
@@ -51,6 +57,11 @@ const Footer = () => {
               <li>
                 <Link to="/" className="text-cream/80 hover:text-gold transition-colors">
                   Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/products" className="text-cream/80 hover:text-gold transition-colors">
+                  Products
                 </Link>
               </li>
               <li>
@@ -86,11 +97,11 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="mailto:info@secretattire.com"
+                  href="mailto:secretattire215@gmail.com"
                   className="flex items-center gap-2 text-cream/80 hover:text-gold transition-colors"
                 >
                   <Mail size={18} />
-                  info@secretattire.com
+                  Secretattire215@gmail.com
                 </a>
               </li>
             </ul>
@@ -99,13 +110,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-cream/20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-cream/60">
-            <p>© 2017-2026 SecretAttire.com. All rights reserved.</p>
-            <p className="text-center md:text-right max-w-lg">
-              Disclaimer: Earnings vary based on individual effort. Screenshots and testimonials 
-              are for representation purposes only.
-            </p>
-          </div>
+          <p className="text-sm text-cream/60">© 2017-2026 SecretAttire.com. All rights reserved.</p>
         </div>
       </div>
     </footer>

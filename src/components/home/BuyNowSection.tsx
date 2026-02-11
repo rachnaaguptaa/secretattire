@@ -46,7 +46,10 @@ const BuyNowSection = () => {
               ))}
             </div>
 
-            {/* CTA */}
+            {/* COD */}
+            <p className="text-gold font-medium flex items-center gap-2 mb-8 justify-center lg:justify-start">
+              ✓ Cash on Delivery Available
+            </p>
             <a href="#" className="btn-primary text-lg">
               Buy Now – Shop the Collection
             </a>
