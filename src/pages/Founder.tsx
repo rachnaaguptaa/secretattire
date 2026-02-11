@@ -35,7 +35,7 @@ const Founder = () => {
     { year: "2021", title: "Women Empowerment", description: "Launched the Work From Home program, enabling 2,000+ women to start their own businesses." },
     { year: "2022", title: "WSBulk Launch", description: "Founded WSBulk — a digital marketing solutions company offering WhatsApp automation, performance marketing, and growth tools for startups & SMEs." },
     { year: "2023", title: "National Recognition", description: "Featured on Ideabaaz on Zee TV for innovation in women-led social commerce." },
-    { year: "2024", title: "LYVSTOR & 17L+ Orders", description: "Building LYVSTOR, an AI-powered live-stream shopping platform. Secret Attire crossed 17+ lakh deliveries." },
+    { year: "2024", title: "LYVSTOR & 4L+ Orders", description: "Building LYVSTOR, an AI-powered live-stream shopping platform. Secret Attire crossed 4+ lakh deliveries." },
   ];
 
   const newsArticles = [

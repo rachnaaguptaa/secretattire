@@ -3,7 +3,7 @@ import packagingImage from "@/assets/packaging.jpg";
 
 const JourneySection = () => {
   const stats = [
-    { icon: Package, value: "17,00,000+", label: "Orders Delivered" },
+    { icon: Package, value: "4,00,000+", label: "Orders Delivered" },
     { icon: Users, value: "Lakhs", label: "Repeat Customers" },
     { icon: Calendar, value: "7+", label: "Years in Fashion" },
     { icon: Heart, value: "5,000+", label: "Women Empowered" },
@@ -52,7 +52,7 @@ const JourneySection = () => {
                 founding in 2017, we've stayed true to this mission.
               </p>
               <p>
-                Today, we've delivered over 17 lakh orders across India, built a community 
+                Today, we've delivered over 4 lakh orders across India, built a community 
                 of loyal repeat customers, and empowered thousands of women to start their 
                 own fashion businesses from home.
               </p>
