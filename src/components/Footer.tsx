@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, Mail, Instagram, Facebook, MessageCircle } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -8,9 +9,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">
-              Secret<span className="text-gold">Attire</span>
-            </h3>
+            <div className="flex items-center gap-2 mb-4">
+              <img src={logo} alt="SecretAttire Logo" className="h-10 w-auto" />
+              <h3 className="text-2xl md:text-3xl font-serif font-bold">
+                Secret<span className="text-gold">Attire</span><sup className="text-xs align-super">®</sup>
+              </h3>
+            </div>
             <p className="text-cream/80 mb-6 max-w-md">
               India's trusted women's fashion brand since 2017. Delivering quality, 
               style, and trust to lakhs of happy customers across the nation.
