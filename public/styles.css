@@ -4,7 +4,7 @@
 
 .footer {
   background: linear-gradient(135deg, #E8B4BC 0%, #F0C8CF 50%, #F8E8EB 100%);
-  color: #3D2B2E;
+  color: #7A2E41; /* replaced brown with deep pink */
   position: relative;
   overflow: hidden;
 }
@@ -43,7 +43,7 @@
 
 /* Brand Text */
 .footer-brand p {
-  color: #5A3E42;
+  color: #A64B5A; /* replaced brown with medium pink */
   margin-bottom: 1.5rem;
   max-width: 400px;
 }
@@ -83,7 +83,7 @@
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #3D2B2E;
+  color: #7A2E41; /* heading in deep pink */
 }
 
 /* Links */
@@ -92,7 +92,7 @@
 }
 
 .footer-links a {
-  color: #5A3E42;
+  color: #A64B5A;
   transition: all 0.2s ease;
 }
 
@@ -106,7 +106,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #5A3E42;
+  color: #A64B5A;
   margin-bottom: 0.75rem;
   transition: all 0.2s ease;
 }
@@ -129,7 +129,7 @@
   flex-direction: column;
   gap: 1rem;
   font-size: 0.875rem;
-  color: #6B4B4F;
+  color: #C46A75; /* footer bottom text to lighter pink */
 }
 
 @media (min-width: 768px) {

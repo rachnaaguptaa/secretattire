@@ -103,6 +103,25 @@ const WorkFromHome = () => {
         </div>
       </section>
 
+      {/* Watch - How It Works Video */}
+      <section className="section-padding bg-background">
+        <div className="container-width text-center">
+          <span className="inline-block px-4 py-2 rounded-full bg-rose-light text-rose-deep text-sm font-medium mb-4">Watch</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">How It <span className="text-rose-deep">Works — Watch</span></h2>
+          <p className="text-lg text-muted-foreground mb-6">Watch this short explainer to see how the Work From Home program works in under a few minutes.</p>
+
+          <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-elevated">
+            <iframe
+              src="https://www.youtube.com/embed/R1Uayz1xM0Q?si=-K3pzbThyWYVViEb"
+              title="How It Works - Secret Attire"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="w-full h-64 md:h-96"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* How It Works */}
       <section className="section-padding bg-background">
         <div className="container-width">
@@ -166,16 +185,16 @@ const WorkFromHome = () => {
             </div>
 
             <div className="text-center lg:text-left">
-              <div className="card-elegant bg-foreground text-cream p-8 lg:p-12">
+              <div className="card-elegant bg-card text-card-foreground p-8 lg:p-12">
                 <TrendingUp className="w-16 h-16 text-gold mx-auto lg:mx-0 mb-6" />
                 <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">
                   No Stock. No Risk.
                 </h3>
-                <p className="text-cream/80 mb-6">
+                <p className="text-card-foreground mb-6">
                   Unlike traditional businesses, you don't need to buy stock upfront. 
                   Order only what your customers want, and we ship directly to them.
                 </p>
-                <ul className="space-y-2 text-cream/80">
+                <ul className="space-y-2 text-card-foreground">
                   <li className="flex items-center gap-2">
                     <CheckCircle size={18} className="text-gold" />
                     No bulk inventory

@@ -7,14 +7,16 @@
 @layer base {
   :root {
     /* Logo-based palette - hot pink, magenta, cream */
-    --background: 330 30% 98%;
-    --foreground: 330 25% 18%;
+    /* Make the site background a soft brand pink to match the logo/footer */
+    --background: 340 60% 95%;
+    /* foreground moved from deep brown/maroon to brand pink tones */
+    --foreground: 340 30% 22%;
 
-    --card: 330 20% 97%;
-    --card-foreground: 330 25% 18%;
+    --card: 340 20% 97%;
+    --card-foreground: 340 30% 22%;
 
-    --popover: 330 20% 97%;
-    --popover-foreground: 330 25% 18%;
+    --popover: 340 20% 97%;
+    --popover-foreground: 340 30% 22%;
 
     /* Hot pink - primary brand color from logo */
     --primary: 330 65% 60%;
@@ -58,6 +60,8 @@
     --gradient-gold: linear-gradient(135deg, hsl(38 70% 55%) 0%, hsl(45 75% 65%) 100%);
     --gradient-rose: linear-gradient(135deg, hsl(330 65% 60%) 0%, hsl(320 55% 45%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(330 20% 97%) 0%, hsl(330 35% 94%) 100%);
+    /* Subtle site-wide background gradient to match logo/pink theme */
+    --gradient-background: linear-gradient(135deg, hsl(340 65% 97%) 0%, hsl(340 60% 95%) 50%, hsl(340 55% 93%) 100%);
 
     /* Shadows */
     --shadow-soft: 0 4px 20px -4px hsl(330 40% 60% / 0.15);
@@ -85,8 +89,28 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
+    /* apply subtle pink gradient while preserving CSS variable color tokens */
+    background: var(--gradient-background);
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Use the logo serif across the UI so the site matches the brand mark */
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  /* Brand selection color to match pink theme */
+  ::selection {
+    background: hsl(340 65% 85%);
+    color: hsl(340 30% 12%);
+  }
+
+  /* Ensure a robust font stack with sensible fallbacks */
+  .font-serif-fallback {
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  }
+
+  .font-sans-fallback {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -126,6 +150,13 @@
 
   .text-gradient-gold {
     background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-rose {
+    background: var(--gradient-rose);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -183,7 +214,8 @@
   .nav-link::after {
     content: '';
     @apply absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300;
-    background: hsl(var(--rose-deep));
+    /* Use the rose gradient for the nav underline to match the logo */
+    background: var(--gradient-rose);
   }
 
   .nav-link:hover::after {
@@ -209,6 +241,13 @@
     @apply w-16 h-16 rounded-full flex items-center justify-center;
     background: hsl(var(--rose-light));
     color: hsl(var(--rose-deep));
+  }
+
+  /* Header gradient matching the logo ribbon colors */
+  .header-gradient {
+    background: var(--gradient-rose);
+    /* subtle translucency when placed over content */
+    background-clip: padding-box;
   }
 }
 

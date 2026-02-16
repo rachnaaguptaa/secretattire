@@ -17,14 +17,16 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 header-gradient/90 backdrop-blur-md border-b border-border/50">
       <nav className="container-width section-padding !py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-3">
             <img src={logo} alt="SecretAttire Logo" className="h-10 w-auto" />
-            <span className="text-2xl md:text-3xl font-serif font-bold text-rose-deep">
-              Secret<span className="text-gold">Attire</span><sup className="text-xs align-super">®</sup>
+            <span className="text-2xl md:text-3xl font-serif font-bold tracking-tight">
+              <span className="text-gradient-rose">Secret</span>
+              <span className="ml-1 text-gradient-gold">Attire</span>
+              <sup className="text-xs align-super ml-1 text-foreground/80">®</sup>
             </span>
           </Link>
 
@@ -34,15 +36,17 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`nav-link font-medium ${
-                  isActive(link.path) ? "text-rose-deep" : ""
+                className={`nav-link font-medium text-lg md:text-xl ${
+                  isActive(link.path) ? "text-gradient-rose" : ""
                 }`}
               >
                 {link.name}
               </Link>
             ))}
             <a
-              href="#"
+              href="https://lyvstor.com/brand/secretattire/4"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-primary !py-3 !px-6 text-sm"
             >
               Buy Now
@@ -69,14 +73,16 @@ const Navbar = () => {
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={`text-lg font-medium py-2 ${
-                    isActive(link.path) ? "text-rose-deep" : "text-foreground"
-                  }`}
+                      isActive(link.path) ? "text-gradient-rose" : "text-foreground"
+                    }`}
                 >
                   {link.name}
                 </Link>
               ))}
               <a
-                href="#"
+                href="https://lyvstor.com/brand/secretattire/4"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary text-center mt-2"
               >
                 Buy Now
